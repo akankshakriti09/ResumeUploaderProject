@@ -6,6 +6,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { useState } from 'react';
 import { styled } from '@mui/material/styles';
+import {  useSaveProfileMutation} from './services/ProfileApi';
 
 function App() {
 
@@ -48,6 +49,9 @@ function App() {
       setRdoc('')
       document.getElementById('resume-form').reset()
    }
+
+   // RTK query
+   const [saveProfile] = useSaveProfileMutation()
 
    // Handle Form Submission
    const handleSubmit = (e) => {
