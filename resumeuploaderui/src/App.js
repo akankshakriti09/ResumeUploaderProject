@@ -54,7 +54,7 @@ function App() {
    const [saveProfile] = useSaveProfileMutation()
 
    // Handle Form Submission
-   const handleSubmit = (e) => {
+   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = new FormData()
     data.append('name', name)
@@ -66,7 +66,7 @@ function App() {
     data.append('pimage', pimage)
     data.append('rdoc', rdoc)
     if (name && email) {
-      const res = saveProfile(data)
+      const res = await saveProfile(data)
       console.log(res)
       setError({ status: true, msg: "Resume Uploaded Successfully", type: 'success' })
       resetForm()
@@ -74,8 +74,6 @@ function App() {
       setError({ status: true, msg: "All Fields are Required", type: 'error' })
     }
   }
-
-
 
   return (
     <>
