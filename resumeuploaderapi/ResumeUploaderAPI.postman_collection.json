@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "47c840fb-6695-468c-8538-345b0bc1e0a3",
+		"name": "ResumeUploaderAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19976440"
+	},
+	"item": [
+		{
+			"name": "ListResume",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "SaveProfile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Raj",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "raj@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "dob",
+							"value": "1996-05-10",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "Bihar",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "Male",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "Delhi Kolkata",
+							"type": "text"
+						},
+						{
+							"key": "pimage",
+							"type": "file",
+							"src": "/D:/Files/dp.jpg"
+						},
+						{
+							"key": "rdoc",
+							"type": "file",
+							"src": "/D:/Files/resume.docx"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/resume/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"resume",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
