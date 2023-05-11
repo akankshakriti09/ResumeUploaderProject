@@ -66,14 +66,8 @@ function App() {
     data.append('pimage', pimage)
     data.append('rdoc', rdoc)
     if (name && email) {
-      console.log(data.get('name'))
-      console.log(data.get('email'))
-      console.log(data.get('dob'))
-      console.log(data.get('st'))
-      console.log(data.get('gender'))
-      console.log(data.get('pjl'))
-      console.log(data.get('pimage'))
-      console.log(data.get('rdoc'))
+      const res = saveProfile(data)
+      console.log(res)
       setError({ status: true, msg: "Resume Uploaded Successfully", type: 'success' })
       resetForm()
     } else {
