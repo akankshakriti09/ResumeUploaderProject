@@ -7,6 +7,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { useState } from 'react';
 import { styled } from '@mui/material/styles';
 import {  useSaveProfileMutation} from './services/ProfileApi';
+import { format } from "date-fns";
 
 function App() {
 
@@ -59,10 +60,10 @@ function App() {
     const data = new FormData()
     data.append('name', name)
     data.append('email', email)
-    data.append('dob', dob)
-    data.append('st', st)
+    data.append('dob', dob==null? null: format(dob,'YYYY-MM-DD'))
+    data.append('state', st)
     data.append('gender', gender)
-    data.append('pjl', pjl)
+    data.append('location', pjl)
     data.append('pimage', pimage)
     data.append('rdoc', rdoc)
     if (name && email) {
