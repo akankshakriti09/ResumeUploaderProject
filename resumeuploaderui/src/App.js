@@ -94,8 +94,10 @@ function App() {
 
   return (
     <>
-      <Box display="flex" justifyContent="center" sx={{ backgroundColor: 'error.light', padding: 2 }}>
-        <Typography variant='h2' component="div" sx={{ fontWeight: 'bold', color: 'white' }}>Resume Uploader</Typography>
+      <Box display="flex" justifyContent="center" sx={{
+       backgroundColor:"#B71C1C" , padding:2}}>
+        <Typography variant="h4" component="div" sx={{ 
+          fontWeight:"bold", color:"white"}}>Resume Uploader</Typography>
       </Box>
       <Grid container justifyContent="center">
 
