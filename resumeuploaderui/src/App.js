@@ -4,7 +4,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { useEffect, useState } from 'react';
 import { styled } from '@mui/material/styles';
-import {  useSaveProfileMutation} from './services/ProfileApi';
+import {  useSaveProfileMutation} from './services/candidateProfileApi';
 import { format } from "date-fns";
 
 function App() {
