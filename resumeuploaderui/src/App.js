@@ -4,8 +4,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { useEffect, useState } from 'react';
 import { styled } from '@mui/material/styles';
-import {  useSaveProfileMutation , useGetResumeProfileQuery } from './services/candidateProfileApi';
-import { format } from "date-fns";
+import {  useSaveProfileMutation} from './services/ProfileApi';
 
 function App() {
 
@@ -75,8 +74,8 @@ function App() {
     const data = new FormData()
     data.append('name', name)
     data.append('email', email)
-    data.append('dob', dob == null ? null : format(dob, 'yyyy-MM-dd'))
-    data.append('state', st)
+    data.append('dob', dob)
+    data.append('st', st)
     data.append('gender', gender)
     data.append('location', pjl)
     data.append('pimage', pimage)
