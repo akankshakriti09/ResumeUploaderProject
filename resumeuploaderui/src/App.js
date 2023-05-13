@@ -165,7 +165,7 @@ function App() {
             <Stack direction="row" alignItems="center" spacing={4} >
               <label htmlFor='profile-photo'>
                 <Input accept="image/*" id="profile-photo" type="file" onChange={(e) => { setPimage(e.target.files[0]) }} />
-                <Button variant='contained' component='span'>Upload Photo </Button>
+                <Button variant='contained' component='span'>Upload Photo</Button>
               </label>
               <label htmlFor="resume-file">
                 <Input accept="doc/*" id="resume-file" type="file" onChange={(e) => { setRdoc(e.target.files[0]) }} />
