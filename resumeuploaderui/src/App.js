@@ -146,6 +146,7 @@ function App() {
                 <MenuItem value="WB">West Bengal</MenuItem>
               </Select>
             </FormControl>
+
             <FormControl fullWidth margin='normal'>
               <FormLabel id="gender-radio">Gender</FormLabel>
               <RadioGroup row name="gender" aria-labelledby="gender-radio">
@@ -154,6 +155,7 @@ function App() {
                 <FormControlLabel value="other" control={<Radio />} label='Other' onChange={(e) => setGender(e.target.value)} />
               </RadioGroup>
             </FormControl>
+
             <FormControl component='fieldset' fullWidth margin='normal'>
               <FormLabel component='legend'>Preferred Job Location:</FormLabel>
               <FormGroup row>
@@ -164,6 +166,7 @@ function App() {
                <FormControlLabel control={<Checkbox />} label="Kolkata" value="Kolkata" onChange={(e) => getPjl(e)} /> 
               </FormGroup>
             </FormControl>
+
             <Stack direction="row" alignItems="center" spacing={4} >
               <label htmlFor='profile-photo'>
                 <Input accept="image/*" id="profile-photo" type="file" onChange={(e) => { setPimage(e.target.files[0]) }} />
@@ -174,6 +177,7 @@ function App() {
                 <Button variant="contained" component="span">Upload File</Button>
               </label>
             </Stack>
+
             <Button type='submit' variant='contained' sx={{ mt: 3, mb: 2, px: 5 }} color="error">Submit</Button>
             {error.status ? <Alert severity={error.type}>{error.msg}</Alert> : ''}
           </Box>
@@ -183,6 +187,7 @@ function App() {
           <Box display="flex" justifyContent="center" sx={{ backgroundColor: 'info.light', padding: 1 }}>
             <Typography variant="h5" component="div" sx={{ fontWeight: 'bold', color: 'white' }}> List of Candidates</Typography>
           </Box>
+          
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
               <TableHead>
