@@ -15,14 +15,14 @@ function App() {
   });
 
   // States
-  const [name, setName] = useState()
-  const [email, setEmail] = useState()
-  const [dob, setDob] = useState(null)
-  const [st, setSt] = useState('')
-  const [gender, setGender] = useState()
-  const [pjl, setPjl] = useState([])
-  const [pimage, setPimage] = useState('')
-  const [rdoc, setRdoc] = useState('')
+  const [name, setName] = useState() //Name
+  const [email, setEmail] = useState() //EMail
+  const [dob, setDob] = useState(null) //Date of Birth
+  const [st, setSt] = useState('') //State
+  const [gender, setGender] = useState() //Gender
+  const [pjl, setPjl] = useState([]) //Job Location
+  const [pimage, setPimage] = useState('') //Upload Image
+  const [rdoc, setRdoc] = useState('') //Upload Resume Doc
   const [error, setError] = useState({
     status: false,
     msg: "",
