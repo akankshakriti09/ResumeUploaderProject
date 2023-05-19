@@ -92,7 +92,7 @@ function App() {
 
   useEffect(() => {
     if (data && isSuccess) {
-      setCandidates(data.candidates)
+      setCandidates(data.candidate)
     }
   }, [data, isSuccess])
 
