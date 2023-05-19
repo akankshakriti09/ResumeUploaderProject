@@ -87,8 +87,8 @@ function App() {
   };
 
   // RTK Query
-  const [saveProfile] = useSaveProfileMutation()
-  const { data, isSuccess } = useGetResumeProfileQuery()
+  const [saveProfile] = useSaveProfileMutation();
+  const { data, isSuccess, getResumeProfile } = useGetResumeProfileQuery();
 
   useEffect(() => {
     if (data && isSuccess) {
@@ -100,24 +100,25 @@ function App() {
   // Handle Form Submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = new FormData();
-    data.append("name", name);
-    data.append("email", email);
-    data.append(
-      "dob",
-      dob == null ? null : format(new Date(dob), "yyyy-MM-dd")
-    );
-    data.append("state", st);
-    data.append("gender", gender);
-    data.append("location", pjl);
-    data.append("pimage", pimage);
-    data.append("rdoc", rdoc);
+    const data = new FormData()
+    data.append('name', name)
+    data.append('email', email)
+    data.append('dob', dob==null? null: format(dob,'yyyy-MM-dd'))
+    data.append('state', st)
+    data.append('gender', gender)
+    data.append('location', pjl)
+    data.append('pimage', pimage)
+    data.append('rdoc', rdoc)
     if (name && email) {
       const res = await saveProfile(data);
       console.log(res);
       if (res.data.status === "success") {
-        setError({ status: true, msg: "Resume Uploaded Successfully", type: 'success' })
-        resetForm()
+        setError({
+          status: false,
+          msg: "Resume Uploaded Successfully",
+          type: "success",
+        });
+        resetForm();
       }
     } else {
       setError({ status: true, msg: "All Fields are Required", type: "error" });
@@ -328,8 +329,19 @@ function App() {
         </Grid>
 
         <Grid item xs={7}>
-          <Box display="flex" justifyContent="center" sx={{ backgroundColor: 'info.light', padding: 1 }}>
-            <Typography variant="h5" component="div" sx={{ fontWeight: 'bold', color: 'white' }}> List of Candidates</Typography>
+          <Box
+            display="flex"
+            justifyContent="center"
+            sx={{ backgroundColor: "info.light", padding: 1 }}
+          >
+            <Typography
+              variant="h5"
+              component="div"
+              sx={{ fontWeight: "bold", color: "white" }}
+            >
+              {" "}
+              List of Candidates
+            </Typography>
           </Box>
 
           <TableContainer component={Paper}>
