@@ -88,7 +88,7 @@ function App() {
 
   // RTK Query
   const [saveProfile] = useSaveProfileMutation();
-  const { data, isSuccess, getResumeProfile } = useGetResumeProfileQuery();
+  const { data, isSuccess } = useGetResumeProfileQuery();
 
   useEffect(() => {
     if (data && isSuccess) {
