@@ -90,11 +90,11 @@ function App() {
   const [saveProfile] = useSaveProfileMutation();
   const { data, isSuccess, getResumeProfile } = useGetResumeProfileQuery();
 
-  useEffect(async() => {
-    const response = await fetch('http://127.0.0.1:8000/api');
-    const jsonData = await response.json();
-    console.log(jsonData);
-  }, []);
+  useEffect(() => {
+    if (data && isSuccess) {
+      setCandidates(data.candidate)
+    }
+  }, [data, isSuccess])
 
 
   // Handle Form Submission
