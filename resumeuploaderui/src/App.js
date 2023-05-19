@@ -88,7 +88,7 @@ function App() {
 
   // RTK Query
   const [saveProfile] = useSaveProfileMutation();
-  const { data, isSuccess, getResumeProfile } = useGetResumeProfileQuery();
+  const { data, isSuccess } = useGetResumeProfileQuery();
 
   useEffect(() => {
     if (data && isSuccess) {
@@ -100,15 +100,18 @@ function App() {
   // Handle Form Submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = new FormData()
-    data.append('name', name)
-    data.append('email', email)
-    data.append('dob', dob==null? null: format(dob,'yyyy-MM-dd'))
-    data.append('state', st)
-    data.append('gender', gender)
-    data.append('location', pjl)
-    data.append('pimage', pimage)
-    data.append('rdoc', rdoc)
+    const data = new FormData();
+    data.append("name", name);
+    data.append("email", email);
+    data.append(
+      "dob",
+      dob == null ? null : format(new Date(dob), "yyyy-MM-dd")
+    );
+    data.append("state", st);
+    data.append("gender", gender);
+    data.append("location", pjl);
+    data.append("pimage", pimage);
+    data.append("rdoc", rdoc);
     if (name && email) {
       const res = await saveProfile(data);
       console.log(res);
@@ -354,7 +357,7 @@ function App() {
                   <TableCell align="center">State</TableCell>
                   <TableCell align="center">Gender</TableCell>
                   <TableCell align="center">Location</TableCell>
-                  <TableCell align="center">Photo</TableCell>
+                  <TableCell align="center">Avatar</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
